@@ -1,4 +1,4 @@
-Name: Adding Numbers
+name: Adding Numbers
 on:
    push:
         branches: ["master"]
