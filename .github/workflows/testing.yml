@@ -28,7 +28,9 @@ jobs:
          runs-on: ubuntu-latest
          steps:
          - name : Checking the previous data
-           run: ls -lrta
+           run: |
+              cd Action
+              cat file1.txt
 
             
                 
