@@ -4,7 +4,8 @@ on:
         paths-ignore:
             - .github/workflows/index.yml   
         #paths:
-         #   - .github/workflows/testing.yml
+        #   - .github/workflows/testing.yml
+        
    
 jobs:
     Setting_up_server:
