@@ -25,7 +25,7 @@ jobs:
                cat file1.txt
 
     Checking_again:
-         need: Setting_up_server
+         needs: Setting_up_server
          runs-on: ubuntu-latest
          steps:
          - name : Checking the previous data
