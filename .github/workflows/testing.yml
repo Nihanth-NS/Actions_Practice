@@ -10,7 +10,7 @@ jobs:
                cd Action
                sudo touch file1.txt
                sudo chmod 777 file1.txt
-               "ACTION FOLDER WITH FILE1" >>file1.txt
+               echo "ACTION FOLDER WITH FILE1" >>file1.txt
                cat file1.txt
 
             
