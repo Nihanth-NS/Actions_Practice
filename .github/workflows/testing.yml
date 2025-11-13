@@ -8,7 +8,8 @@ jobs:
            run: |
                sudo mkdir Action
                cd Action
-               touch file1.txt >> "ACTION FOLDER WITH FILE1"
+               touch file1.txt 
+               "ACTION FOLDER WITH FILE1" >>file1.txt
 
             
                 
