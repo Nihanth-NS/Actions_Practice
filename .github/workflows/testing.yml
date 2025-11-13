@@ -2,7 +2,9 @@ name: Testing here
 on: 
    push: 
         paths-ignore:
-            - index.yml
+            - .github/workflows/index.yml   
+        #paths:
+         #   - .github/workflows/testing.yml
    
 jobs:
     Setting_up_server:

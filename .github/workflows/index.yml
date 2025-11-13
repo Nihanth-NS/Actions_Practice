@@ -1,7 +1,10 @@
 name: Adding Numbers
 on:
    push:
+        paths-ignore:
+           - .github/workflows/testing.yml
         branches: ["master"]
+      
 jobs:
   test:
      runs-on: ubuntu-latest
