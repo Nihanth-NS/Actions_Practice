@@ -1,5 +1,9 @@
 name: Testing here
-on: push
+on: 
+   push: 
+        paths-ignore:
+            - index.yml
+   
 jobs:
     Setting_up_server:
          runs-on: ubuntu-latest
