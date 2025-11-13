@@ -8,7 +8,7 @@ jobs:
 
      steps:
       - name: Checking out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # uses to copy this entire repo to the instance
 
       - name: Install python
         uses: actions/setup-python@v4
