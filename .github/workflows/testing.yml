@@ -23,12 +23,21 @@ jobs:
            run: |
                echo "ACTION FOLDER WITH FILE1" >>file1.txt
                cat file1.txt
+         - name: Uploading the data in instance
+           uses: actions/upload-artifact@v3
+           with:
+              name: Action folder
+              path: Action
 
     Checking_again:
          needs: Setting_up_server
          runs-on: ubuntu-latest
          steps:
-         - name : Checking the previous data
+         - name: Downloading folder from instance
+           uses: actions/download-artifact@v3
+           with:
+             name: Action folder
+         - name: Checking the previous data
            run: |
               cd Action
               cat file1.txt
