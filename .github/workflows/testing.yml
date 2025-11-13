@@ -24,7 +24,7 @@ jobs:
                echo "ACTION FOLDER WITH FILE1" >>file1.txt
                cat file1.txt
 
-      Checking_again:
+    Checking_again:
          runs-on: ubuntu-latest
          steps:
          - name : Checking the previous data
