@@ -15,10 +15,20 @@ jobs:
            run: |
                sudo mkdir Action
                cd Action
+         - name: Creating file and giving permisiions
+           run: |
                sudo touch file1.txt
                sudo chmod 777 file1.txt
+         - name: Adding text and printing
+           run: |
                echo "ACTION FOLDER WITH FILE1" >>file1.txt
                cat file1.txt
+
+      Checking_again:
+         runs-on: ubuntu-latest
+         steps:
+         - name : Checking the previous data
+           run: ls -lrta
 
             
                 
