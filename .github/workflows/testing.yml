@@ -33,13 +33,14 @@ jobs:
            uses: actions/download-artifact@v4
            with:
              name: Action folder
+             path: ./downloaded
          
          - name: List downloaded files
            run: ls -R
 
          - name: Checking the previous data
            run: |
-              cd Action
+              cd downloaded/Action
               cat file1.txt
 
             
