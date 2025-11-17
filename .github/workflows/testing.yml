@@ -40,6 +40,7 @@ jobs:
 
          - name: Checking the previous data
            run: |
+              cd downloaded
               cat file1.txt
 
             
