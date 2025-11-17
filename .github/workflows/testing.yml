@@ -35,7 +35,7 @@ jobs:
              name: Action folder
          
          - name: List downloaded files
-            run: ls -R
+           run: ls -R
 
          - name: Checking the previous data
            run: |
