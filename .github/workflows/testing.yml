@@ -16,6 +16,7 @@ jobs:
                touch file1.txt
                chmod 777 file1.txt
          - name: Writing
+           run: |
                echo "ACTION FOLDER WITH FILE1" >> file1.txt
                cat file1.txt
          - name: Uploading the data in instance
