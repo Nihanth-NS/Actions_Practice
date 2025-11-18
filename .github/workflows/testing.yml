@@ -13,16 +13,16 @@ jobs:
          steps:
          - name: Creating folder
            run: |
-               sudo mkdir Action
+               mkdir Action
                cd Action
-               sudo touch file1.txt
-               sudo chmod 777 file1.txt
-               echo "ACTION FOLDER WITH FILE1" >> $GITHUB_WORKSPACE/Action/file1.txt
+               touch file1.txt
+               chmod 777 file1.txt
+               echo "ACTION FOLDER WITH FILE1" >> file1.txt
                cat file1.txt
          - name: Uploading the data in instance
            uses: actions/upload-artifact@v4
            with:
-              name: Action folder
+              name: Action_folder
               path: Action/
 
     Checking_again:
@@ -32,7 +32,7 @@ jobs:
          - name: Downloading folder from instance
            uses: actions/download-artifact@v4
            with:
-             name: Action folder
+             name: Action_folder
              path: ./downloaded
          
          - name: List downloaded files
@@ -41,6 +41,7 @@ jobs:
          - name: Checking the previous data
            run: |
               cd downloaded
+              cd Action
               cat file1.txt
 
             
