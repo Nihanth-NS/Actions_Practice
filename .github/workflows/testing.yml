@@ -13,17 +13,16 @@ jobs:
          steps:
          - name: Creating folder
            run: |
-               mkdir Action
-               cd Action
                touch file1.txt
                chmod 777 file1.txt
+         - name: Writing
                echo "ACTION FOLDER WITH FILE1" >> file1.txt
                cat file1.txt
          - name: Uploading the data in instance
            uses: actions/upload-artifact@v4
            with:
               name: Action_folder
-              path: Action/
+              path: file1.txt
 
     Checking_again:
          needs: Setting_up_server
@@ -41,7 +40,6 @@ jobs:
          - name: Checking the previous data
            run: |
               cd downloaded
-              cd Action
               cat file1.txt
 
             
