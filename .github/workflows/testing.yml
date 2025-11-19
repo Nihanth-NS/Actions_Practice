@@ -18,7 +18,6 @@ jobs:
            run: |
              echo env.u_name >> file2.txt
              echo env.pass >> file2
-           run: |
              cat file2.txt
         #  -name: Doing 
         #    run: |
