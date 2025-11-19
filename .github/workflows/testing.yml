@@ -17,9 +17,11 @@ jobs:
          runs-on: ubuntu-latest
          steps:
          - name: Creating folder
-            run: |
+           run: |
                echo ${{ vars.MY_UNAME }} >> file2.txt 
-               echo ${{ secrets.MY_EXAMPLE_PASS }} >> file2.txt #// Adding Secrets varibales
+               echo ${{ secrets.MY_EXAMPLE_PASS }} >> file2.txt
+    # Adding env variables at repo level
+                #// Adding Secrets varibales
           #  env:
           #    u_name: Nihanth
           #    pass: Nihanths // Env variables at step level where only a single step can access it
