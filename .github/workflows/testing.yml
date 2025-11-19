@@ -16,8 +16,8 @@ jobs:
              u_name: Nihanth
              pass: Nihanths
            run: |
-             echo env.u_name >> file2.txt
-             echo env.pass >> file2
+             echo ${{ env.u_name }} >> file2.txt
+             echo $pass >> file2
              cat file2.txt
         #  -name: Doing 
         #    run: |
