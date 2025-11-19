@@ -6,19 +6,26 @@ on:
         #paths:
         #   - .github/workflows/testing.yml #
         
-   
+# env:
+#   u_name: Hello
+#   pass: Nihanth // ENV variables at workflow level where every job can access it.
 jobs:
     Setting_up_server:
+    # env: 
+    #   u_name: Hello
+    #   pass: Nihanth // Env VAriables at job level where only single job and multiple steps inside can access it 
          runs-on: ubuntu-latest
          steps:
          - name: Creating folder
-           env:
-             u_name: Nihanth
-             pass: Nihanths
            run: |
-             echo ${{ env.u_name }} >> file2.txt
-             echo $pass >> file2
-             cat file2.txt
+             echo ${{ secrets.MY_EXAMPLE_PASS }} >> file2.txt
+          #  env:
+          #    u_name: Nihanth
+          #    pass: Nihanths // Env variables at step level where only a single step can access it
+          #  run: |
+          #    echo ${{ env.u_name }} >> file2.txt
+          #    echo $pass >> file2.txt
+          #    cat file2.txt
         #  -name: Doing 
         #    run: |
         #        touch file1.txt
@@ -27,6 +34,7 @@ jobs:
         #    run: |
         #        echo "ACTION FOLDER WITH FILE1" >> file1.txt
         #        cat file1.txt
+
          - name: Uploading the data in instance
            uses: actions/upload-artifact@v4
            with:
