@@ -12,18 +12,27 @@ jobs:
          runs-on: ubuntu-latest
          steps:
          - name: Creating folder
+           env:
+             u_name: Nihanth
+             pass: Nihanths
            run: |
-               touch file1.txt
-               chmod 777 file1.txt
-         - name: Writing
+             echo env.u_name >> file2.txt
+             echo env.pass >> file2
            run: |
-               echo "ACTION FOLDER WITH FILE1" >> file1.txt
-               cat file1.txt
+             cat file2.txt
+        #  -name: Doing 
+        #    run: |
+        #        touch file1.txt
+        #        chmod 777 file1.txt
+        #  - name: Writing
+        #    run: |
+        #        echo "ACTION FOLDER WITH FILE1" >> file1.txt
+        #        cat file1.txt
          - name: Uploading the data in instance
            uses: actions/upload-artifact@v4
            with:
               name: Action_folder
-              path: file1.txt
+              path: file2.txt
 
     Checking_again:
          needs: Setting_up_server
@@ -33,14 +42,9 @@ jobs:
            uses: actions/download-artifact@v4
            with:
              name: Action_folder
-             path: ./downloaded
          
-         - name: List downloaded files
-           run: ls -R
-
          - name: Checking the previous data
            run: |
-              cd downloaded
               cat file1.txt
 
             
