@@ -44,7 +44,7 @@ jobs:
          
          - name: Checking the previous data
            run: |
-              cat file1.txt
+              cat file2.txt
 
             
                 
