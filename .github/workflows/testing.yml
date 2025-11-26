@@ -49,9 +49,9 @@ jobs:
 
     Checking_again:
          needs: Setting_up_server
-       #  concurrency:  # Concurrency is used when workflows triggerd when other workflow is running then one workflow need to stop.
-       #     group: Production-deployment 
-        #    cancel-in-progress: true #false is used if other workflow is already running it will wait until it completes and run after completing previous ,and true is it cancels any running workflow with in a group and runs this.
+         concurrency:  # Concurrency is used when workflows triggerd when other workflow is running then one workflow need to stop.
+            group: Production-deployment 
+            cancel-in-progress: true #false is used if other workflow is already running it will wait until it completes and run after completing previous ,and true is it cancels any running workflow with in a group and runs this.
          runs-on: ubuntu-latest
          steps:
          - name: Downloading folder from instance
