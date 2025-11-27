@@ -18,7 +18,7 @@ jobs:
                     - os: windows-latest 
                 include: # This will includes new specific here we run new images on ubuntu 20.04 OS.
                     - images: amd64/alpine
-                    - os: ubuntu-20.04
+                    - os: ubuntu-22.04
         runs-on: ${{ matrix.os }}
         steps:
         - name: Echo Docker details
