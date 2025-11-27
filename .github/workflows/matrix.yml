@@ -9,7 +9,7 @@ jobs:
     Job_1:
         strategy:
             fail-fast: False # it is default true which when 1 job fails every job will be cancelled.
-            max-parallel: 1  #runs only 2 jobs at a time. 
+            #max-parallel: 1  #runs only 2 jobs at a time. 
             matrix:
                 os: [ubuntu-latest, ubuntu-22.04, windows-latest] #to run on multiple OS at same time
                 images: [hello-world, alpine] #multiple images
