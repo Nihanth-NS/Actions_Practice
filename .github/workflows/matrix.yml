@@ -8,7 +8,7 @@ on:
 jobs:
     Job_1:
         strategy:
-            fail-fast: True # it is default true which when 1 job fails every job will be cancelled.
+            fail-fast: False # it is default true which when 1 job fails every job will be cancelled.
             matrix:
                 os: [ubuntu-latest, ubuntu-20.04, windows-latest] #to run on multiple OS at same time
                 images: [hello-world, alpine] #multiple images
