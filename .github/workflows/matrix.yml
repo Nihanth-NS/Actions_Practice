@@ -10,7 +10,7 @@ jobs:
         strategy:
             matrix:
                 os: [ubuntu-latest, ubuntu-20.04, windows-latest] #to run on multiple OS at same time
-                images: [hello-world, alpine]
+                images: [hello-world, alpine] #multiple images
         runs-on: ${{ matrix.os }}
         steps:
         - name: Echo Docker details
