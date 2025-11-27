@@ -9,7 +9,7 @@ jobs:
     Job_1:
         strategy:
             matrix:
-                os: [ubuntu-latest, ubuntu-20.04, windows-latest]
+                os: [ubuntu-latest, ubuntu-20.04, windows-latest] #to run on multiple OS at same time
                 images: [hello-world, alpine]
         runs-on: ${{ matrix.os }}
         steps:
