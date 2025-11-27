@@ -1,0 +1,24 @@
+name: Matrix
+on:
+    push:
+        paths-ignore: 
+            - .github/workflows/index.yml
+            - .github/workflows/testing.yml
+    workflow_dispatch:
+jobs:
+    Job_1:
+        strategy:
+            matrix:
+                os: [ubuntu-latest, ubuntu-20.04, windows-latest]
+                images: [hello-world, alpine]
+        runs-on: ${{ matrix.os }}
+        steps:
+        - name: Echo Docker details
+          run: docker info
+        
+        - name: Run image on ${{ matrix.os }}
+          run: docker run ${{ matrix.images }}
+
+
+
+    
