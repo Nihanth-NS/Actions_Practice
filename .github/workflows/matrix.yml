@@ -1,7 +1,7 @@
 name: Matrix
 on:
-    workflow_dispatch: 
-    # push:  
+    workflow_dispatch:
+    # push: 
     #   paths-ignore: 
     #         - .github/workflows/index.yml
     #         - .github/workflows/testing.yml
