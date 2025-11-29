@@ -6,41 +6,42 @@ on:
             - .github/workflows/testing.yml
     workflow_dispatch:
 jobs:
-    #Job_1:
-        # strategy:
-        #     fail-fast: False # it is default true which when 1 job fails every job will be cancelled.
-        #     max-parallel: 1  #runs only 1 jobs at a time. 
-        #     matrix:
-        #         os: [ubuntu-latest, ubuntu-22.04, windows-latest] #to run on multiple OS at same time
-        #         images: [hello-world, alpine] #multiple images
-        #         exclude: # This is used to exclude a specific for example here alpine will excluded on ruuning in windows-latest OS.
-        #             - images: alpine
-        #               os: windows-latest 
-        #         include: # This will includes new specific here we run new images on ubuntu 20.04 OS.
-        #             - images: amd64/alpine
-        #               os: ubuntu-22.04
-        # runs-on: ${{ matrix.os }}
-        # steps:
-        # - name: Echo Docker details
-        #   run: docker info
+    Job_1:
+        if: github.ref='refs/heads/master'
+        strategy:
+            fail-fast: False # it is default true which when 1 job fails every job will be cancelled.
+            max-parallel: 1  #runs only 1 jobs at a time. 
+            matrix:
+                os: [ubuntu-latest, ubuntu-22.04, windows-latest] #to run on multiple OS at same time
+                images: [hello-world, alpine] #multiple images
+                exclude: # This is used to exclude a specific for example here alpine will excluded on ruuning in windows-latest OS.
+                    - images: alpine
+                      os: windows-latest 
+                include: # This will includes new specific here we run new images on ubuntu 20.04 OS.
+                    - images: amd64/alpine
+                      os: ubuntu-22.04
+        runs-on: ${{ matrix.os }}
+        steps:
+        - name: Echo Docker details
+          run: docker info
         
-        # - name: Run image on ${{ matrix.os }}
-        #   run: docker run ${{ matrix.images }}
-    Context: #Context is used to print details of specific like github is used to print about your github, job will say about success or not and there are so many contexts,,and tojson converts data to human readble format.
-      runs-on: ubuntu-latest
-      steps:
-      - name: Dump github context
-        env:
-          GITHUB_Context: ${{toJson(github)}}
-        run: echo "$GITHUB_Context"
-      - name: Dump job context
-        env:
-          Job_Context: ${{toJson(job)}}
-        run: echo "$Job_Context"
-      - name: Secret Data
-        env:
-          Secret_Context: ${{toJson(secrets)}}
-        run: echo "$Secret_Context"
+        - name: Run image on ${{ matrix.os }}
+          run: docker run ${{ matrix.images }}
+    # Context: #Context is used to print details of specific like github is used to print about your github, job will say about success or not and there are so many contexts,,and tojson converts data to human readble format.
+    #   runs-on: ubuntu-latest
+    #   steps:
+    #   - name: Dump github context
+    #     env:
+    #       GITHUB_Context: ${{toJson(github)}}
+    #     run: echo "$GITHUB_Context"
+    #   - name: Dump job context
+    #     env:
+    #       Job_Context: ${{toJson(job)}}
+    #     run: echo "$Job_Context"
+    #   - name: Secret Data
+    #     env:
+    #       Secret_Context: ${{toJson(secrets)}}
+    #     run: echo "$Secret_Context"
 
 
 
