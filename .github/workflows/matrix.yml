@@ -1,6 +1,6 @@
 name: Matrix
 on:
-    workflow_dispatch: #cvbghnm,
+    workflow_dispatch: #cvbghnm,bh
     push: 
       paths-ignore: 
             - .github/workflows/index.yml
