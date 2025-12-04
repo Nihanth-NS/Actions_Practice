@@ -10,6 +10,6 @@ jobs:
           run: mkdir IAM
         - name: Create File inside Dir_IAM
           run: |
-               cd IAM
+               cd IAM_1
                touch Hello.txt
           
