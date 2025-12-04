@@ -1,10 +1,10 @@
 name: Adding Numbers
-on:
-   push:
-        paths-ignore:
-           - .github/workflows/testing.yml
-           - .github/workflows/matrix.yml
-        branches: ["master"]
+# on:
+#    push:
+#         paths-ignore:
+#            - .github/workflows/testing.yml
+#            - .github/workflows/matrix.yml
+#         branches: ["master"]
       
 jobs:
   test:

@@ -6,5 +6,10 @@ jobs:
     First:
         runs-on: self-hosted
         steps:
-        - name: Print it
+        - name: Create Dir
           run: mkdir IAM
+        - name: Create File inside Dir_IAM
+          run: |
+               cd IAM
+               touch Hello.txt
+          
