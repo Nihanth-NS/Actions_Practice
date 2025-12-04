@@ -1,0 +1,10 @@
+name: Adding for self hosted server
+on:
+    push:
+        branches: ['master']
+jobs:
+    First:
+        runs-on: self-hosted
+        steps:
+        - name: Print it
+          run: echo "ITS GREAT"
