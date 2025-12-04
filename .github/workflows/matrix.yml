@@ -1,24 +1,24 @@
 name: Matrix
-on:
-    workflow_dispatch: #cvbghnm,bh
-    #push: 
-      paths-ignore: 
-            - .github/workflows/index.yml
-            - .github/workflows/testing.yml
-      branches-ignore:  # add ONLY this and explain, it will run for push on any branch except these
-        - feature/*     # feature/add-music, feature/updateImages
-        - test/**       # test/ui/index, test/checkout/payment/
-      branches:
-      - main
-      - '!feature/*'    # ignoring pushing to any branch name starting with feature using !
-    pull_request:
-     types:
-      - opened  #when pull req opened this will run
-      - closed  # closing pull req runs this
-     paths-ignore:       #  workflow will only run when a pull request that includes a change any file other than README
-      - README.md
-     branches:
-        - main          # configure your workflow to only run on pull requests that target specific branches. 
+#on:
+    # workflow_dispatch: #cvbghnm,bh
+    # push: 
+    #   paths-ignore: 
+    #         - .github/workflows/index.yml
+    #         - .github/workflows/testing.yml
+    #   branches-ignore:  # add ONLY this and explain, it will run for push on any branch except these
+    #     - feature/*     # feature/add-music, feature/updateImages
+    #     - test/**       # test/ui/index, test/checkout/payment/
+    #   branches:
+    #   - main
+    #   - '!feature/*'    # ignoring pushing to any branch name starting with feature using !
+    # pull_request:
+    #  types:
+    #   - opened  #when pull req opened this will run
+    #   - closed  # closing pull req runs this
+    #  paths-ignore:       #  workflow will only run when a pull request that includes a change any file other than README
+    #   - README.md
+    #  branches:
+    #     - main          # configure your workflow to only run on pull requests that target specific branches. 
 jobs:
     Job_1:
         if: github.ref == 'refs/heads/if' # expressions used at job level and step level using context here it checks if branch is master or not, if master then runs.
